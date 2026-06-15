@@ -1,26 +1,160 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+   /* ─────────────────────────────────────
+     BACKGROUNDS
+  ───────────────────────────────────── */
+   --color-bg-primary: #FFFFFF;
+   /* Main page background       */
+   --color-bg-secondary: #F5F5F5;
+   /* Section / hero background   */
+   --color-bg-tertiary: #EBEBEB;
+   /* Subtle surface, input fill  */
+   --color-bg-card: #FFFFFF;
+   /* Product cards               */
+   --color-bg-dark: #0A0A0A;
+   /* Footer, dark CTA sections   */
+   --color-bg-dark-surface: #1A1A1A;
+   /* Cards inside dark sections  */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+   /* ─────────────────────────────────────
+     TEXT
+  ───────────────────────────────────── */
+   --color-text-primary: #0A0A0A;
+   /* Headings, bold text         */
+   --color-text-secondary: #2E2E2E;
+   /* Body text                   */
+   --color-text-muted: #5C5C5C;
+   /* Captions, placeholders      */
+   --color-text-disabled: #AEAEAE;
+   /* Disabled / strikethrough    */
+   --color-text-inverse: #FFFFFF;
+   /* Text on dark backgrounds    */
+   --color-text-on-dark-muted: #AEAEAE;
+   /* Muted text on dark bg       */
+
+   /* ─────────────────────────────────────
+     BORDERS
+  ───────────────────────────────────── */
+   --color-border-light: #E8E8E8;
+   /* Default card borders        */
+   --color-border-medium: #CFCFCF;
+   /* Input borders, dividers     */
+   --color-border-strong: #AEAEAE;
+   /* Hover state borders         */
+   --color-border-dark: #2E2E2E;
+   /* Borders on dark sections    */
+
+   /* ─────────────────────────────────────
+     BUTTONS
+  ───────────────────────────────────── */
+   --color-btn-primary-bg: #0A0A0A;
+   /* Primary button background   */
+   --color-btn-primary-text: #FFFFFF;
+   /* Primary button text         */
+   --color-btn-primary-hover: #2E2E2E;
+   /* Primary button hover bg     */
+   --color-btn-secondary-bg: #FFFFFF;
+   /* Ghost button background     */
+   --color-btn-secondary-text: #0A0A0A;
+   /* Ghost button text           */
+   --color-btn-secondary-border: #AEAEAE;
+   /* Ghost button border         */
+
+   /* ─────────────────────────────────────
+     BADGES / TAGS
+  ───────────────────────────────────── */
+   --color-badge-sale-bg: #0A0A0A;
+   /* Sale badge background       */
+   --color-badge-sale-text: #FFFFFF;
+   /* Sale badge text             */
+   --color-badge-new-bg: #2E2E2E;
+   /* New badge background        */
+   --color-badge-new-text: #FFFFFF;
+   /* New badge text              */
+   --color-badge-hot-bg: #5C5C5C;
+   /* Hot badge background        */
+   --color-badge-hot-text: #FFFFFF;
+   /* Hot badge text              */
+
+   /* ─────────────────────────────────────
+     TYPOGRAPHY
+  ───────────────────────────────────── */
+   --font-poppins: "Poppins", sans-serif;
+
+
+   --font-weight-normal: 400;
+   --font-weight-medium: 500;
+   --font-weight-bold: 600;
+
+   --line-height-tight: 1.3;
+   --line-height-body: 1.7;
+
+   /* ─────────────────────────────────────
+     SPACING
+  ───────────────────────────────────── */
+   --space-1: 4px;
+   --space-2: 8px;
+   --space-3: 12px;
+   --space-4: 16px;
+   --space-5: 20px;
+   --space-6: 24px;
+   --space-8: 32px;
+   --space-10: 40px;
+   --space-12: 48px;
+   --space-16: 64px;
+
+   /* ─────────────────────────────────────
+     TRANSITIONS
+  ───────────────────────────────────── */
+   --transition-fast: 0.15s ease;
+   --transition-normal: 0.25s ease;
+   --transition-slow: 0.4s ease;
+
+   /* ─────────────────────────────────────
+     Z-INDEX
+  ───────────────────────────────────── */
+   --z-base: 1;
+   --z-dropdown: 100;
+   --z-sticky: 200;
+   --z-modal: 300;
+   --z-toast: 400;
+
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+   font-family: var(--font-poppins);
+}
+
+
+/* =========================
+   FIREFOX + CHROME PREMIUM SCROLLBAR
+========================= */
+
+/* Chrome / Edge / Safari */
+::-webkit-scrollbar {
+   width: 8px;
+}
+
+::-webkit-scrollbar-track {
+   background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+   background: #111;
+   border-radius: 999px;
+   border: 2px solid var(--color-bg-primary);
+   transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: #000;
+}
+
+/* Firefox */
+html {
+   scrollbar-width: thin;
+   /* auto | thin | none */
+   scrollbar-color: #111 var(--color-bg-primary);
 }
